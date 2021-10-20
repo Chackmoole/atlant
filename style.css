@@ -1,11 +1,10 @@
 :root {
   --color-text-black: #18191f;
   --color-text-white: #ffffff;
+  --color-main: #183181;
+  --color-second: #cdcdcd;
   --color-bg-white: #ffffff;
-  --color-bg-orange: #fecb45;
-  --color-bg-lightGray: #eaecf7;
-  --color-bg-red: #d8232a;
-  --color-bg-darkBlue: #183181;
+
 }
 
 *, *::before, *::after {
@@ -31,6 +30,7 @@ p {
 ul {
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 .visually-hidden {
@@ -50,57 +50,38 @@ ul {
 .button {
   height: 40px;
   min-width: 100px;
+  padding: 10px 12px;
   font-size: 14px;
   font-weight: 700;
-  padding: 10px 12px;
-  background-color: var(--color-bg-darkBlue);
+  background-color: var(--color-main);
   color: var(--color-text-white);
   border: none;
   border-radius: 8px;
-  text-align: center;
-  vertical-align: center;
 }
 
-.icon-button {
-  border: transparent;
-  background-color: transparent;
+.button:hover {
+  border: 1px solid var(--color-main);
+  background-color: var(--color-bg-white);
+  color: var(--color-main);
+  transition: 0.4s;
 }
 
-.button-round:focus svg path {
-  border: transparent;
-}
+.button-prod {
 
-.icon-button:hover svg path {
-  fill: var(--color-bg-white);
-}
-
-.icon-button:hover svg circle {
-  fill: var(--color-bg-red);
-}
-
-.icon-button--gray:hover svg circle {
-  fill: var(--color-bg-orange);
-}
-
-.icon-button--gray:hover svg path {
-  fill: var(--color-text-black);
-}
-
-.button-promo {
-  padding: 12px 24px;
 }
 
 .title {
-  font-weight: 800;
+  display: block;
   margin: 0;
   padding: 0;
-  display: block;
+  font-size: 48px;
+  line-height: 64px;
+  font-weight: 800;
 }
 
 .title--h1 {
   font-size: 72px;
   line-height: 98px;
-  margin-bottom: 16px;
 }
 
 .title--h2 {
@@ -108,16 +89,15 @@ ul {
   line-height: 64px;
 }
 
+.title--h3 {
+  font-size: 28px;
+  line-height: 40px;
+}
+
 .link {
+  display: inline-block;
+  color: var(--color-text-black);
   text-decoration: none;
-}
-
-.logo-img {
-
-}
-
-.logo-text {
-
 }
 
 .main-nav {
@@ -136,13 +116,14 @@ ul {
   padding-bottom: 16px;
 }
 
-.main-nav__item {
-
+.main-nav__link {
+  line-height: 40px;
 }
 
-.main-nav__link {
-  color: var(--color-text-black);
-  line-height: 40px;
+.main-nav__link:hover {
+  text-decoration: underline var(--color-main);
+  transition: 0.4s;
+  color: var(--color-main);
 }
 
 .intro {
@@ -151,15 +132,19 @@ ul {
   padding-bottom: 220px;
 }
 
+.intro__title {
+  margin-bottom: 16px;
+}
+
+/*тут ограничил ширину, так как считаю дизайнерской заумкой*/
 .intro__description {
-  display: inline-block;
   width: 540px;
   line-height: 32px;
   margin-bottom: 32px;
 }
 
 .intro__link {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
   text-decoration: none;
@@ -167,28 +152,43 @@ ul {
   min-width: 230px;
 }
 
+.intro__link-text {
+  position: relative;
+  padding-left: 88px;
+}
+
+.intro__link:hover svg circle {
+  fill: var(--color-main);
+  stroke: var(--color-main);
+}
+
+.intro__link:hover svg path {
+  stroke: var(--color-text-white);
+}
+
+.intro__link-text::before {
+  position: absolute;
+  content: url("svg/line6.svg");
+  margin-right: 8px;
+  top: -5px;
+  left: 0;
+  width: 80px;
+}
+
 .features {
   padding-top: 64px;
-  padding-bottom: 16px;
+  padding-bottom: 32px;
 }
 
 .features__list {
-  list-style: none;
   display: flex;
   justify-content: space-between;
+  gap: 30px;
+  list-style: none;
 }
 
 .features__items {
-  width: 255px;
-}
-
-.features__items:not(:last-child) {
-  margin-right: 30px;
-}
-
-.features__value {
-  font-size: 48px;
-  line-height: 64px;
+  min-width: 255px;
 }
 
 .features__description {
@@ -197,9 +197,21 @@ ul {
 }
 
 .construction {
-  background: url("svg/circle.svg") no-repeat right 16px top 48px;
-  padding-top: 80px;
+  position: relative;
+  padding-top: 64px;
   padding-bottom: 184px;
+}
+
+.construction::after {
+  position: absolute;
+  content: "";
+  width: 540px;
+  height: 540px;
+  border-radius: 50%;
+  background-color: var(--color-second);
+  right: 16px;
+  top: 48px;
+  z-index: -1;
 }
 
 .construction__list {
@@ -209,9 +221,10 @@ ul {
 }
 
 .construction__item {
-  outline: 1px red solid;
+  position: relative;
   display: flex;
   width: 255px;
+  height: 200px;
   padding-top: 24px;
   padding-bottom: 24px;
   padding-left: 24px;
@@ -223,65 +236,108 @@ ul {
   box-shadow: 0 10px 20px rgba(41, 41, 42, 0.07);
 }
 
+.construction__item:hover {
+  transition: 0.2s;
+  box-shadow: 0 10px 20px rgba(41, 41, 42, 0.37);
+}
+
 .construction__inner {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
+
 .construction__title {
   margin-bottom: 48px;
 }
 
-.promo {
-  background: rgb(254, 203, 69);
-  background: linear-gradient(90deg, rgba(254, 203, 69, 1) 0%, rgba(254, 203, 69, 1) 50%, rgba(234, 236, 247, 1) 50%, rgba(234, 236, 247, 1) 100%);
+.construction__img-1 {
+  position: absolute;
+  top: 88px;
+  left: 20px;
 }
 
-.promo__wrapper {
+.construction__img-2 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.construction__img-3 {
+  position: absolute;
+  bottom: 12px;
+  left: 100px;
+}
+
+.construction__img-4 {
+  position: absolute;
+  top: 92px;
+  left: 80px;
+}
+
+.construction__img-5 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.construction__img-6 {
+  position: absolute;
+  top: 108px;
+  left: 92px;
+}
+
+.construction__img-7 {
+  position: absolute;
+  top: 108px;
+  left: 56px;
+}
+
+.construction__img-8 {
+  position: absolute;
+  top: 102px;
+  left: 92px;
+}
+
+.projects {
+
+}
+
+.title-projects {
+
+}
+
+.prod-card__description {
+  font-size: 28px;
+  line-height: 40px;
+}
+
+.projects__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.prod-card {
+
+}
+
+.prod-card__inner {
   display: flex;
 }
 
-.promo__inner {
-  min-height: 424px;
-  padding-top: 56px;
+.prod-card__box {
 
 }
 
-.promo__box {
-  display: flex;
-  align-items: center;
+.prod-card__title {
+  padding-right: 8px;
 }
 
-.promo__block {
-  width: 50%;
-  min-height: 600px;
-}
-
-.promo__first {
-  background-image: url("/img/promo-pic1.png");
-  background-repeat: no-repeat;
-  background-size: 250px;
-  background-position: bottom right 40px;
+.prod-card__description {
 
 }
 
-.promo__second {
-  padding-left: 128px;
-  background-image: url("/img/promo-pic2.png");
-  background-repeat: no-repeat;
-  background-size: 250px;
-  background-position: bottom right;
-}
+.prod-card__data {
 
-.promo__title {
-  margin-bottom: 24px;
-}
-
-.promo__description {
-  margin-bottom: 8px;
-}
-
-.promo__inner .promo__description:last-of-type {
-  margin-bottom: 12px;
 }
