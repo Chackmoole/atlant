@@ -84,11 +84,6 @@ ul {
   line-height: 98px;
 }
 
-.title--h2 {
-  font-size: 48px;
-  line-height: 64px;
-}
-
 .title--h3 {
   font-size: 28px;
   line-height: 40px;
@@ -100,10 +95,18 @@ ul {
   text-decoration: none;
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .main-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-grow: 2;
+  margin-right: 32px;
 }
 
 .main-nav__list {
@@ -136,7 +139,6 @@ ul {
   margin-bottom: 16px;
 }
 
-/*тут ограничил ширину, так как считаю дизайнерской заумкой*/
 .intro__description {
   width: 540px;
   line-height: 32px;
@@ -168,9 +170,10 @@ ul {
 
 .intro__link-text::before {
   position: absolute;
-  content: url("svg/line6.svg");
+  border-bottom: 1px solid var(--color-text-black);
+  content: "";
   margin-right: 8px;
-  top: -5px;
+  top: 10px;
   left: 0;
   width: 80px;
 }
@@ -252,52 +255,23 @@ ul {
   margin-bottom: 48px;
 }
 
-.construction__img-1 {
-  position: absolute;
-  top: 88px;
-  left: 20px;
-}
-
-.construction__img-2 {
+.construction__img {
   position: absolute;
   right: 0;
   bottom: 0;
 }
 
-.construction__img-3 {
-  position: absolute;
-  bottom: 12px;
-  left: 100px;
+.construction__img--right {
+  right: -24px;
 }
 
-.construction__img-4 {
-  position: absolute;
-  top: 92px;
-  left: 80px;
+.construction__img--bottom {
+  bottom: -28px;
 }
 
-.construction__img-5 {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-}
-
-.construction__img-6 {
-  position: absolute;
-  top: 108px;
-  left: 92px;
-}
-
-.construction__img-7 {
-  position: absolute;
-  top: 108px;
-  left: 56px;
-}
-
-.construction__img-8 {
-  position: absolute;
-  top: 102px;
-  left: 92px;
+.construction__img--right-bottom {
+  right: -24px;
+  bottom: -28px;
 }
 
 .projects {
