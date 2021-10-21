@@ -1,8 +1,8 @@
 :root {
   --color-text-black: #18191f;
   --color-text-white: #ffffff;
-  --color-main: #183181;
-  --color-second: #cdcdcd;
+  --color-primary: #183181;
+  --color-secondaryary: #cdcdcd;
   --color-bg-white: #ffffff;
 
 }
@@ -53,16 +53,16 @@ ul {
   padding: 10px 12px;
   font-size: 14px;
   font-weight: 700;
-  background-color: var(--color-main);
+  background-color: var(--color-primary);
   color: var(--color-text-white);
   border: none;
   border-radius: 8px;
 }
 
 .button:hover {
-  border: 1px solid var(--color-main);
+  border: 1px solid var(--color-primary);
   background-color: var(--color-bg-white);
-  color: var(--color-main);
+  color: var(--color-primary);
   transition: 0.4s;
 }
 
@@ -124,9 +124,9 @@ ul {
 }
 
 .main-nav__link:hover {
-  text-decoration: underline var(--color-main);
+  text-decoration: underline var(--color-primary);
   transition: 0.4s;
-  color: var(--color-main);
+  color: var(--color-primary);
 }
 
 .intro {
@@ -160,8 +160,8 @@ ul {
 }
 
 .intro__link:hover svg circle {
-  fill: var(--color-main);
-  stroke: var(--color-main);
+  fill: var(--color-primary);
+  stroke: var(--color-primary);
 }
 
 .intro__link:hover svg path {
@@ -170,8 +170,9 @@ ul {
 
 .intro__link-text::before {
   position: absolute;
-  border-bottom: 1px solid var(--color-text-black);
+  height: 2px;
   content: "";
+  background: var(--color-text-black);
   margin-right: 8px;
   top: 10px;
   left: 0;
@@ -211,7 +212,7 @@ ul {
   width: 540px;
   height: 540px;
   border-radius: 50%;
-  background-color: var(--color-second);
+  background-color: var(--color-secondaryary);
   right: 16px;
   top: 48px;
   z-index: -1;
@@ -266,11 +267,6 @@ ul {
 }
 
 .construction__img--bottom {
-  bottom: -28px;
-}
-
-.construction__img--right-bottom {
-  right: -24px;
   bottom: -28px;
 }
 
