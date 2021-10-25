@@ -263,6 +263,8 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  color: var(--color-text-black);
+  text-decoration: none;
   width: 255px;
   height: 200px;
   padding-top: 24px;
