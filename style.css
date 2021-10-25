@@ -5,6 +5,7 @@
   --color-secondary: #cdcdcd;
   --color-bg-white: #ffffff;
   --color-bg-blue: #408ec7;
+  --color-bg-gray: #f4f5f7;
 
 }
 
@@ -116,7 +117,7 @@ ul {
   width: 0;
   height: 2px;
   background-color: var(--color-primary);
-  transition: width 1s;
+  transition: width 0.5s;
   left: 0;
   bottom: 0;
 }
@@ -247,7 +248,7 @@ ul {
 .construction__item {
   position: relative;
   display: flex;
-  transition: box-shadow 1s;
+  transition: box-shadow 0.5s;
   font-size: 24px;
   line-height: 32px;
   font-weight: 600;
@@ -434,10 +435,6 @@ ul {
   content: url("/img/phone-mockup.png");
 }
 
-.offer__inner {
-  width: 720px;
-}
-
 .offer__title {
   margin-bottom: 32px;
 }
@@ -457,7 +454,7 @@ ul {
   color: var(--color-text-white);
   text-decoration: none;
   font-size: 30px;
-  transition: width 1s;
+  transition: width 0.5s;
 }
 
 .offer__link::after {
@@ -467,7 +464,7 @@ ul {
   height: 2px;
   width: 0;
   bottom: 0;
-  transition: width 1s;
+  transition: width 0.5s;
 }
 
 .offer__link svg {
@@ -493,7 +490,7 @@ ul {
 }
 
 .gallery__item {
-  transition: box-shadow 1s;
+  transition: box-shadow 0.5s;
 }
 
 .gallery__item img {
@@ -502,4 +499,40 @@ ul {
 
 .gallery__item:hover {
   box-shadow: 0 10px 20px rgba(41, 41, 42, 0.37);
+}
+
+.trust {
+  padding: 60px 0;
+  background-color: var(--color-bg-gray);
+}
+
+.trust__title {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.trust__description {
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 48px;
+}
+
+.trunst__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  width: 946px;
+  margin: 0 auto;
+}
+
+.trust__item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.trust__img {
+  border-radius: 16px;
+  box-shadow: 0 30px 40px rgba(212, 217, 232, 0.2);
 }
