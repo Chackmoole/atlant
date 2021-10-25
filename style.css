@@ -2,7 +2,7 @@
   --color-text-black: #18191f;
   --color-text-white: #ffffff;
   --color-primary: #183181;
-  --color-secondaryary: #cdcdcd;
+  --color-secondary: #cdcdcd;
   --color-bg-white: #ffffff;
 
 }
@@ -55,8 +55,8 @@ ul {
   font-weight: 700;
   background-color: var(--color-primary);
   color: var(--color-text-white);
-  border: none;
-  border-radius: 8px;
+  border: 1px solid var(--color-primary);
+  border-radius: 20px;
 }
 
 .button:hover {
@@ -64,10 +64,6 @@ ul {
   background-color: var(--color-bg-white);
   color: var(--color-primary);
   transition: 0.4s;
-}
-
-.button-prod {
-
 }
 
 .title {
@@ -85,14 +81,47 @@ ul {
 }
 
 .title--h3 {
+  font-size: 40px;
+  line-height: 54px;
+}
+
+.title--h4 {
   font-size: 28px;
   line-height: 40px;
+}
+
+.subtitle {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 800;
 }
 
 .link {
   display: inline-block;
   color: var(--color-text-black);
   text-decoration: none;
+  position: relative;
+  transition: color 0.5s;
+  line-height: 40px;
+}
+
+.link:hover {
+  color: var(--color-primary);
+}
+
+.link::after {
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: width 1s;
+  left: 0;
+  bottom: 0;
+}
+
+.link:hover::after {
+  width: 100%;
 }
 
 .header {
@@ -117,16 +146,6 @@ ul {
   align-items: center;
   padding-top: 16px;
   padding-bottom: 16px;
-}
-
-.main-nav__link {
-  line-height: 40px;
-}
-
-.main-nav__link:hover {
-  text-decoration: underline var(--color-primary);
-  transition: 0.4s;
-  color: var(--color-primary);
 }
 
 .intro {
@@ -212,7 +231,7 @@ ul {
   width: 540px;
   height: 540px;
   border-radius: 50%;
-  background-color: var(--color-secondaryary);
+  background-color: var(--color-secondary);
   right: 16px;
   top: 48px;
   z-index: -1;
@@ -227,11 +246,7 @@ ul {
 .construction__item {
   position: relative;
   display: flex;
-  width: 255px;
-  height: 200px;
-  padding-top: 24px;
-  padding-bottom: 24px;
-  padding-left: 24px;
+  transition: box-shadow 0.5s;
   font-size: 24px;
   line-height: 32px;
   font-weight: 600;
@@ -241,14 +256,20 @@ ul {
 }
 
 .construction__item:hover {
-  transition: 0.2s;
   box-shadow: 0 10px 20px rgba(41, 41, 42, 0.37);
 }
 
-.construction__inner {
+.construction__link {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  color: var(--color-text-black);
+  text-decoration: none;
+  width: 255px;
+  height: 200px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 24px;
 }
 
 
@@ -270,15 +291,11 @@ ul {
   bottom: -28px;
 }
 
-.projects {
-
+.projects__title {
+  margin-bottom: 48px;
 }
 
-.title-projects {
-
-}
-
-.prod-card__description {
+.product__description {
   font-size: 28px;
   line-height: 40px;
 }
@@ -286,28 +303,114 @@ ul {
 .projects__list {
   display: flex;
   flex-wrap: wrap;
+  gap: 80px 100px;
+  margin-bottom: 60px;
 }
 
-.prod-card {
-
+.projects__button {
+  margin: 0 auto;
+  margin-bottom: 4px;
+  display: block;
 }
 
-.prod-card__inner {
+.product {
+  padding-bottom: 24px;
+  border-bottom: 2px solid rgba(205, 205, 205, .1);
+}
+
+.product__inner {
   display: flex;
+  margin-bottom: 24px;
 }
 
-.prod-card__box {
-
+.product__img {
+  margin-bottom: 24px;
 }
 
-.prod-card__title {
+.product__box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product__title {
   padding-right: 8px;
 }
 
-.prod-card__description {
-
+.product__caption {
+  font-weight: 400;
 }
 
-.prod-card__data {
-
+.product__data {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
 }
+
+.about {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 64px;
+}
+
+.about__logo {
+  position: relative;
+  background-position: left 40px bottom -15px;
+  width: 50%;
+}
+
+.about__logo::before {
+  position: absolute;
+  content: "";
+  width: 540px;
+  height: 540px;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+  z-index: -1;
+  top: 70px;
+}
+
+.about__logo::after {
+  position: absolute;
+  content: url("img/mock-blank.jpg");
+  left: 0;
+  bottom: -50px;
+}
+
+.about__img {
+  background-position: top -150px;
+}
+
+.about__box--column {
+  padding: 0 56px;
+}
+
+.about__title {
+  margin-bottom: 32px;
+}
+
+.about__subtitle {
+  color: var(--color-primary);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.about__description {
+  line-height: 32px;
+  margin-bottom: 32px;
+}
+
+.about__link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-primary);
+}
+
+.about__link svg {
+  margin-left: 8px;
+  text-align: center;
+}
+
