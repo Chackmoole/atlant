@@ -557,10 +557,6 @@ ul {
   min-width: 160px;
 }
 
-.footer__list {
-
-}
-
 .footer__title {
   font-size: 20px;
   line-height: 30px;
@@ -610,13 +606,13 @@ ul {
   margin: 0;
 }
 
-.footer__lable {
+.footer__label {
   position: relative;
   display: flex;
   align-items: center;
 }
 
-.footer__lable svg {
+.footer__label svg {
   position: absolute;
   right: 12px;
 }
