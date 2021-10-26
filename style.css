@@ -637,13 +637,6 @@ ul {
   color: var(--color-secondary);
 }
 
-/*.footer__input::after {*/
-/*  position: absolute;*/
-/*  content: url("img/send2.svg");*/
-/*  top: 30px;*/
-/*  right: 20px;*/
-/*}*/
-
 .copyright {
   display: flex;
   flex-direction: column;
